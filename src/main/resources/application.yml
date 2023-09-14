@@ -1,0 +1,12 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    username: "nathand59_fc_men"
+    password: "Toto&59000"
+    url: "jdbc:mariadb://mysql-nathand59.alwaysdata.net/nathand59_menuiserie"
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database: mysql
