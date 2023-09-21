@@ -1,12 +1,12 @@
 package fr.studi.menuiserie.pojo;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -18,4 +18,15 @@ public class Menuiserie {
     private Long menuiserie_id;
 
     private String nom;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "menuiserie_id")
+    private Set<Horaire> horaires = new LinkedHashSet<>();
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "menuiserie_id")
+    private Set<Avis> avis = new LinkedHashSet<>();
+
+
+
 }
