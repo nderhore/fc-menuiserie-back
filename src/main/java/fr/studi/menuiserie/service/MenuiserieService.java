@@ -26,4 +26,19 @@ public class MenuiserieService {
         }
         return maMenuiserie;
     }
+
+
+    public void updateMenuiserie(Menuiserie menuiserie) {
+        //recuperation de la menuiserie de la db
+        Menuiserie maMenuiserie = this.getMenuiserie();
+
+        //modification de la menuiserie
+        maMenuiserie.setAvis(menuiserie.getAvis());
+        maMenuiserie.setNom(menuiserie.getNom());
+        maMenuiserie.setHoraires(menuiserie.getHoraires());
+
+        //on envoie en base la modification
+        this.menuiserieRepository.save(maMenuiserie);
+
+    }
 }

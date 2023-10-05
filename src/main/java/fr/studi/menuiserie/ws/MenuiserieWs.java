@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping(ApiRegistration.REST_MENUISERIE)
 @CrossOrigin
 public class MenuiserieWs {
 
@@ -22,6 +22,11 @@ public class MenuiserieWs {
     @GetMapping
     public Menuiserie getMenuiserie(){
         return this.menuiserieService.getMenuiserie();
+    }
+
+    @PutMapping
+    public void updateMenuiserie(@RequestBody Menuiserie menuiserie){
+        this.menuiserieService.updateMenuiserie(menuiserie);
     }
 
 
