@@ -33,9 +33,7 @@ public class MenuiserieService {
         Menuiserie maMenuiserie = this.getMenuiserie();
 
         //modification de la menuiserie
-        maMenuiserie.setAvis(menuiserie.getAvis());
         maMenuiserie.setNom(menuiserie.getNom());
-        maMenuiserie.setHoraires(menuiserie.getHoraires());
 
         //on envoie en base la modification
         this.menuiserieRepository.save(maMenuiserie);

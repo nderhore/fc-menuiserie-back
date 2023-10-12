@@ -19,14 +19,6 @@ public class Menuiserie {
 
     private String nom;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "menuiserie_id")
-    private Set<Horaire> horaires = new LinkedHashSet<>();
-
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "menuiserie_id")
-    private Set<Avis> avis = new LinkedHashSet<>();
-
 
 
 }
