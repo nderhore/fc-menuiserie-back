@@ -13,4 +13,5 @@ public interface ApiRegistration {
     String REST_SERVICE = "/service";
 
     String REST_IMAGE = "/image";
+    String REST_LOGIN = "/auth";
 }
